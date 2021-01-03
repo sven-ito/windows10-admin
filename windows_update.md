@@ -1,5 +1,13 @@
 # Windows Update
 
+## Check if Windows System files are "sane"
+
+Checks if the system / update files are still valid / not damaged:
+
+```
+sfc /scannow
+```
+
 ## Log File
 
 In order to determine what exactly went wrong, review the log files:
