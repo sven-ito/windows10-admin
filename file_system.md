@@ -15,6 +15,11 @@ Contains:
 
 # Filesystem - GPT vs. MBR
 
+## UEFI Partition
+
+* GPT requires a special UEFI partition (usually no drive letter, ~100 MB, NTFS)
+* don't mix up with Windows Recocery / RE partition
+
 ## Convert from MBR to GPT
 
 https://docs.microsoft.com/de-de/windows/deployment/mbr-to-gpt
