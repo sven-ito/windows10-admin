@@ -13,6 +13,9 @@ Contains:
 
 ## Master File Table (MFT)
 
+* Table of content for files in NTFS
+* Exists per partition
+
 # Filesystem - GPT vs. MBR
 
 ## UEFI Partition
