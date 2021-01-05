@@ -31,7 +31,7 @@ fsutil volume allocationreport C:
 * [Microsoft - Tool - Conversion: MBR -> GPT](https://docs.microsoft.com/de-de/windows/deployment/mbr-to-gpt)
 * Booting from GPT requires UEFI and a 64 Bit OS
 * GPT requires a special UEFI partition (usually no drive letter, ~100 MB, NTFS); don't mix up with Windows Recocery / RE partition
-* BIOS -> MBR -> (Exec Code) -> System Partition Boot Sector (VBR) -> NTldr (NTFS.sys; NToskrnl.exe) -> Boot.ini / BCD
+* BIOS -> MBR -> (Exec Code) -> System Partition Boot Sector (VBR) -> NTldr (NTFS.sys; NToskrnl.exe) -> Boot.ini / BCD; details in [boot.md](boot.md)
 
 #### System Volume Information Folder
 
