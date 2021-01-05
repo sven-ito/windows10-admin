@@ -8,6 +8,7 @@
 ### Archticeture / Parts
 
 * A cluster (or allocation unit) is the smallest amount of disk space that can be allocated to hold a file.
+* (Allocation) Bitmap ($Bitmap) describes which clusters are available/free
 * uses Access Control Lists (ACLs) for permissions
 * Master File Table (MFT, $MFT) per partition -> serves as table of contents
 * Journaling File System -> via NTFS log ($LogFile); format changed with Windows 8.1 to "2.0" (not backwards-compatible to "1.0")
