@@ -12,6 +12,17 @@
 * Master File Table (MFT, $MFT) per partition -> serves as table of contents
 * Journaling File System -> via NTFS log ($LogFile); format changed with Windows 8.1 to "2.0" (not backwards-compatible to "1.0")
 * since Vista: NTFS symbolic links, transactional NTFS (discouraged by developers), partition shrinking, self-healing
+* comes with a series of metadata files (e.g. $Boot, $MFT, $Bitmap)
+
+#### Make Metadata Files visible
+
+(from Admin Shell, all details for drive C:, also lists metadata files)
+
+```
+fsutil volume allocationreport C:
+```
+
+* Also various third party tools can do this (e.g. WinHex, 7-Zip); however, recent security patches might prevent it
 
 #### Boot Mechanism
 
