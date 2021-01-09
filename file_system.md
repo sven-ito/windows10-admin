@@ -7,13 +7,20 @@
 
 ### Archticeture / Parts
 
+* $Volume stores the version of the filesystem, name of the volume, flag bits indicating state / health of the volume (also "dirty" bit for CHKDSK)
 * A cluster (or allocation unit) is the smallest amount of disk space that can be allocated to hold a file.
-* (Allocation) Bitmap ($Bitmap) describes which clusters are available/free
+* A file smaller than the cluster size will waste unused bytes
+* (Allocation) Bitmap ($Bitmap) describes which clusters are available/free.
+* A list of all bad clusters is maintained in $BadClus.
+* Every attribute of a file including the actual file data itself is implemented as a stream (i.e. one file contains multiple streams; the data stream is "anonymous"/has no name).
+* UTF-16 filenames
 * uses Access Control Lists (ACLs) for permissions
-* Master File Table (MFT, $MFT) per partition -> serves as table of contents
-* Journaling File System -> via NTFS log ($LogFile); format changed with Windows 8.1 to "2.0" (not backwards-compatible to "1.0")
+* Permissions (Security Descriptors) are stored in $Secure (Security Descriptors Database; stored as $SDS streams)
+* Master File Table (MFT, $MFT) per partition -> serves as table of contents (array of file records, one record -> 1KB)
+* Journaling File System -> via NTFS log ($LogFile); format changed with Windows 8.1 to "2.0" (not backwards-compatible to "1.0"; do not mix up with USN Journal)
 * since Vista: NTFS symbolic links, transactional NTFS (discouraged by developers), partition shrinking, self-healing
 * comes with a series of metadata files (e.g. $Boot, $MFT, $Bitmap)
+* $Boot stores the Windows bootrap code (if the volume is a system volume)
 
 #### Make Metadata Files visible
 
